@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stile generale per il body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b48c9b; /* Colore di sfondo */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Stile per gli elementi di intestazione (titoli, sottotitoli) */
+h1, h2, h3, h4, h5 {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+/* Stile per i paragrafi */
+p {
+    font-size:10px;
+}
+
+/* Stile per gli input di tipo text, password, date, number e textarea */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+textarea {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid #e6d8dd; /* Contorno verde */
+    border-radius: 5px; /* Bordi rotondi */
+    background-color: #e6d8dd; /* Sfondo verde chiaro */
+    color: #333; /* Colore del testo */
+    font-size: 16px;
+    width: 30%; /* Occupa tutta la larghezza disponibile */
+    box-sizing: border-box; /* Include il padding nel calcolo della larghezza */
+    margin-bottom: 10px; /* Spazio inferiore */
+    transition: background-color 0.3s ease;
+}
+
+/* Al passaggio del mouse */
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="date"]:hover,
+input[type="number"]:hover,
+textarea:hover {
+    background-color: #e6d8dd; /* Sfondo verde */
+    color: #333; /* Testo bianco */
+}
+
+/* Stile per gli input di tipo submit button */
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #672042; /* Contorno verde */
+    border-radius: 25px; /* Bordi rotondi */
+    background-color: #783153; /* Sfondo verde chiaro */
+    color: #333; /* Colore del testo */
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Al passaggio del mouse */
+input[type="submit"]:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+button:hover {
+    background-color: #783153; /* Sfondo verde */
+    color: #ffffff; /* Testo bianco */
+}
+
+/* Stile per i tag select */
+select {
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid #672042; /* Contorno verde */
+    border-radius: 5px; /* Bordi rotondi */
+    background-color: #783153; /* Sfondo verde chiaro */
+    color: #ffffff; /* Colore del testo */
+    font-size: 16px;
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+    box-sizing: border-box; /* Include il padding nel calcolo della larghezza */
+    margin-bottom: 10px; /* Spazio inferiore */
+    transition: background-color 0.3s ease;
+}
+
+/* Stile per gli option nei tag select */
+select option {
+    padding: 10px;
+}
+
+/* Stile per le tabelle */
+/*
+table {
+   /* border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: transparent; /* Sfondo trasparente */
+   /* box-shadow: 0 2px 4px #9b687c;
+    margin-left: auto;
+    margin-right: auto;*//*
+}*/
+/*
+th, td {
+    padding: 15px;
+}
+*/
+
+/* Stile per le descrizioni */
+.description {
+    font-size: 22px;
+    margin-bottom: 10px;
+    text-align: left; /* Allineato a sinistra */
+    color: #333;
+}
+
+/* Contenitore per le immagini */
+.images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.images div {
+    width: 48%;
+}
+
+.images img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #9b687c;
+    border-radius: 4px;
+}
+.scroll-to-top {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    background-color: #672042;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.scroll-to-top:hover {
+    background-color: #672042;
+}
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="number"],
+    textarea {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+
+    table {
+        width: 90%;
+    }
+
+    .images div {
+        width: 100%;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 10px;
+    }
+}
+
+/* Smartphone */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    input[type="submit"],
+    input[type="button"],
+    input[type="reset"],
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    select {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 10px;
+        font-size: 12px;
+    }
+
+    .images {
+        flex-direction: column;
+    }
+
+    .images div {
+        width: 100%;
+    }
+}
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="number"],
+    textarea {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+
+    table {
+        width: 90%;
+    }
+
+    .images div {
+        width: 100%;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 10px;
+    }
+}
+
+/* Smartphone */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    h3 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    input[type="submit"],
+    input[type="button"],
+    input[type="reset"],
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    select {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .scroll-to-top {
+        bottom: 20px;
+        right: 10px;
+        font-size: 12px;
+    }
+
+    .images {
+        flex-direction: column;
+    }
+
+    .images div {
+        width: 100%;
+    }
+}
