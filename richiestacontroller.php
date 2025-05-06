@@ -13,7 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = mysqli_real_escape_string($connessione, $_POST['nome']);
     $descrizione = mysqli_real_escape_string($connessione, $_POST['descrizione']);
     $urgenza_id = intval($_POST['urgenza_id']);
-    $data_invia = mysqli_real_escape_string($connessione, $_POST['data_invia']);
+    
+    // Aggiungi la data e ora corrente nel formato DATETIME
+    $data_invia_completa = date('Y-m-d H:i:s');  // data corrente con ora inclusa
 
     $screenshot_path = null;
 
@@ -42,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               VALUES (
                   '$nome',
                   '$descrizione',
-                  '$data_invia',
+                  '$data_invia_completa',
                   $urgenza_id,";
 
     if ($screenshot_path !== null) {
@@ -54,7 +56,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query .= ")";
 
     if (mysqli_query($connessione, $query)) {
-        echo "<script>alert('Richiesta inviata con successo!'); window.location.href='home.php';</script>";
+        echo "<head>";
+        echo '<meta charset="UTF-8">';
+        echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSS/style.css"> ';
+        echo "</head>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+        echo "<center>";
+        echo "<img src='img/logo.png' alt='logo' style='max-width: 100%; height: auto;'>";
+        echo "<br>";
+        echo "<br>";
+        echo "<form action='home.php' method='post'>
+                    <input type='submit' value='TORNA ALLA HOME'>
+                </form><center>";
+        echo "</center>";
     } else {
         echo "Errore nell'inserimento della richiesta: " . mysqli_error($connessione);
     }

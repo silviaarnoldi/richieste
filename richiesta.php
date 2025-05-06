@@ -33,9 +33,7 @@ session_start();
             ?>
         </select><br><br>
 <br>
-    <label for="data_invia">Data invio:</label>
-    <input type="date" name="data_invia" required><br>
-<br>
+
     <!-- Pulsante per aggiungere screenshot -->
     <button type="button" onclick="mostraCampoScreenshot()">Aggiungi Screenshot (opzionale)</button><br><br>
 <br>
