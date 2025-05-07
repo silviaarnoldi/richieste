@@ -75,14 +75,33 @@ function ordina(colIndex) {
     <a href="home.php"><img src="img/logo2.png" width="200" height="53"></a>
     <center>
         <h1>Amministratore: <?php echo htmlspecialchars($nome) . " " . htmlspecialchars($cognome); ?></h1>
-        <h2>Lista Richieste <form method="post" action="export.php"><button type="submit">Esporta dati</button></form></h2> 
+        <h2>Lista Richieste </h2> 
+        <!-- Bottone per aprire il popup -->
+<button onclick="document.getElementById('exportModal').style.display='block'">Esporta dati</button>
+
+<!-- Modale per esportazione -->
+<div id="exportModal" style="display:none; position:fixed; z-index:1; left:0; top:0; width:100%; height:100%; overflow:auto; background-color:rgba(0,0,0,0.4);">
+    <div style="background-color:#fff; margin:10% auto; padding:20px; border:1px solid #888; width:300px; border-radius:10px;">
+        <span onclick="document.getElementById('exportModal').style.display='none'" style="float:right; cursor:pointer; font-size:20px;">&times;</span>
+        <h3>Esporta richieste per data</h3>
+        <form method="post" action="export.php">
+            <label for="from_date">Da:</label><br>
+            <input type="date" name="from_date" required><br><br>
+            <label for="to_date">A:</label><br>
+            <input type="date" name="to_date" required><br><br>
+            <button type="submit">Esporta</button>
+        </form>
+    </div>
+</div>
+<br>
+<br>
 
         <table id="tabellaRichieste" data-sort-dir="asc" border="1">
             <thead>
                 <tr>
                     <th onclick="ordina(0)">ID Richiesta</th>
                     <th onclick="ordina(1)">Nome</th>
-                    <th onclick="ordina(2)">Data Invia</th>
+                    <th onclick="ordina(2)">Data Invio</th>
                     <th onclick="ordina(3)">Descrizione</th>
                     <th onclick="ordina(4)">Tipo Urgenza</th>
                     <th onclick="ordina(5)">Stato</th>
