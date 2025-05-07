@@ -1,10 +1,9 @@
 <?php
 session_start();
-if(!isset($_SESSION['ruolo']) || $_SESSION['ruolo'] != "TITOLARE"){
-    header("Location: login.php");
+if (!isset($_SESSION['ruolo']) || $_SESSION['ruolo'] !== "TITOLARE") {
+    header("Location: login.php?error=Accesso negato");
     exit();
 }
-
 include "connessione.php";
 
 $nome = $_SESSION['nome'];
